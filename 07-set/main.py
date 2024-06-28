@@ -109,4 +109,40 @@ print("a:", a)
 a.intersection_update(b)
 print("a:", a)
 
-# %%
+# %% pengechekkan keanggotaan subset 
+fellowship = {'aragorn', 'gimli', 'legolas', 'gandalf', 'boromir', 'frodo', 'sam', 'merry', 'pippin'}
+
+hobbits_1 = {'frodo', 'sam', 'merry', 'pippin', 'bilbo'}
+res_1 = hobbits_1.issubset(fellowship)
+print("res_1:", res_1)
+# output ➜ res_1: False
+
+hobbits_2 = {'frodo', 'sam', 'merry', 'pippin'}
+res_2 = hobbits_2.issubset(fellowship)
+print("res_2:", res_2)
+# output ➜ res_2: True
+
+# %% pengechekkan keanggotaan superset
+fellowship = {'aragorn', 'gimli', 'legolas', 'gandalf', 'boromir', 'frodo', 'sam', 'merry', 'pippin'}
+
+hobbits_1 = {'frodo', 'sam', 'merry', 'pippin', 'bilbo'}
+res_1 = fellowship.issuperset(hobbits_1)
+print("res_1:", res_1)
+# output ➜ res_1: False
+
+hobbits_2 = {'frodo', 'sam', 'merry', 'pippin'}
+res_2 = fellowship.issuperset(hobbits_2)
+print("res_2:", res_2)
+# output ➜ res_2: True
+
+# %% pengechekkan keanggotaan disjoint
+fellowship = {'aragorn', 'gimli', 'legolas', 'gandalf', 'boromir', 'frodo', 'sam', 'merry', 'pippin'}
+
+res_1 = fellowship.isdisjoint({'aragorn', 'gimli'})
+print("res_1:", res_1)
+
+res_2 = fellowship.isdisjoint({'pippin', 'bilbo'})
+print("res_2:", res_2)
+
+res_3 = fellowship.isdisjoint({'bilbo'})
+print("res_3:", res_3)
